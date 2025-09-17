@@ -1,0 +1,1 @@
+// Profile page logic is handled in app.js for logout and user info display.

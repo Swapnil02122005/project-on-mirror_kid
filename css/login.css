@@ -1,0 +1,51 @@
+body.login-bg {
+	background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+	color: #111827;
+}
+.login-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+}
+.login-card {
+	background: #fff;
+	color: #111827;
+	box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+	border-radius: 18px;
+	padding: 36px 32px;
+	max-width: 420px;
+	width: 100%;
+}
+.login-card h1 { color: #3730a3; }
+.role-select {
+	display: flex;
+	gap: 18px;
+	margin-bottom: 18px;
+	margin-top: 8px;
+}
+.tabs {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 18px;
+}
+.tab-btn {
+	background: #e0e7ff;
+	color: #3730a3;
+	border: none;
+	padding: 8px 18px;
+	border-radius: 8px 8px 0 0;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.tab-btn.active, .tab-btn:hover {
+	background: #6366f1;
+	color: #fff;
+}
+/* Improve readability on light theme */
+.login-bg .muted { color: #4b5563; }
+.login-bg .nav-links a { color: #1f2937; opacity: .9; }
+.login-bg .nav-links a.active, .login-bg .nav-links a:hover { background: #e0e7ff; }
+
+input, .btn { font-size: 16px; }

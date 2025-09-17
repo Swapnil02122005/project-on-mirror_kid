@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ChildWatch | Home</title>
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/home.css" />
+</head>
+<body class="home-bg" data-protected="true">
+	<header>
+		<div class="container nav">
+			<div class="brand">ChildWatch</div>
+			<nav class="nav-links">
+				<a href="index.html">Login</a>
+				<a href="home.html" class="active">Home</a>
+				<a href="how-it-works.html">How it works</a>
+				<a href="profile.html">Profile</a>
+			</nav>
+		</div>
+	</header>
+	<main class="container home-main">
+		<section id="parent-section" style="display:none;">
+			<h1>Parent Dashboard</h1>
+			<p class="muted">Connect to your child's phone and monitor their activities in real time.</p>
+			<div class="card">
+				<h2>Connect to Child's Phone</h2>
+				<form id="pairForm">
+					<div class="field">
+						<label>Pairing code</label>
+						<input type="text" name="code" placeholder="e.g. 8FQ-3K2-90A" required />
+					</div>
+					<button class="btn" type="submit">Pair devices</button>
+					<div id="pairMsg" class="notice"></div>
+				</form>
+			</div>
+			<div class="card" style="margin-top:24px;">
+				<h2>Child Activity Log</h2>
+				<table class="activity-table">
+					<thead><tr><th>Time</th><th>Activity</th></tr></thead>
+					<tbody id="activityLog"></tbody>
+				</table>
+			</div>
+		</section>
+		<section id="child-section" style="display:none;">
+			<h1>Child Dashboard</h1>
+			<p class="muted">You are being watched by: <span id="watchingParent">Parent</span></p>
+			<div class="card">
+				<h2>Your Recent Activities</h2>
+				<ul id="childActivityList" class="list"></ul>
+			</div>
+		</section>
+	</main>
+	<footer class="footer container">Stay safe and secure.</footer>
+	<script src="/js/app.js"></script>
+	<script src="/js/home.js"></script>
+</body>
+</html>
+

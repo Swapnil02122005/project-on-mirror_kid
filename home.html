@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mirrorkid | Home</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/home.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body class="home-bg" data-protected="true">
+	<header>
+		<div class="container nav">
+			<div class="brand"><img src="assets/logo.svg" alt="Mirrorkid"/><span class="title">Mirrorkid</span></div>
+			<nav class="nav-links">
+				<a href="index.html">Login</a>
+				<a href="home.html" class="active">Home</a>
+				<a href="monitor.html">Monitor</a>
+				<a href="analytics.html">Analytics</a>
+				<a href="how-it-works.html">How it works</a>
+				<a href="profile.html">Profile</a>
+			</nav>
+		</div>
+	</header>
+	<main class="container home-main">
+		<section id="parent-section" style="display:none;">
+			<div class="hero-banner">
+				<div>
+					<h1>Parent Dashboard</h1>
+					<p class="muted">Connect, monitor and guide your children’s digital life. Real-time screen, location and usage insights.</p>
+					<div class="quick-actions" style="margin-top:10px;">
+						<a href="monitor.html" class="btn">Open Live Monitor</a>
+						<a href="analytics.html" class="btn secondary">View Analytics</a>
+					</div>
+				</div>
+				<div class="hero-illustration"></div>
+			</div>
+			<div class="stat-grid">
+				<div class="stat-card"><div class="stat-title">Screen time today</div><div id="statScreenTime" class="stat-value">0m</div></div>
+				<div class="stat-card"><div class="stat-title">Total activities</div><div id="statActivities" class="stat-value">0</div></div>
+				<div class="stat-card"><div class="stat-title">Most used app</div><div id="statTopApp" class="stat-value">-</div></div>
+			</div>
+			<div class="card">
+				<h2>Children</h2>
+				<div id="childList" class="child-list"></div>
+				<div style="display:flex; gap:8px; margin-top:10px;">
+					<input type="text" id="newChildName" placeholder="Child name" style="flex:1;" />
+					<button id="addChildBtn" class="btn secondary">Add child</button>
+				</div>
+			</div>
+			<div class="grid">
+				<div class="card">
+					<h2>Pair with Child</h2>
+					<form id="pairForm">
+						<div class="field">
+							<label>Enter Pairing Code</label>
+							<input type="text" name="code" id="pairCodeInput" placeholder="e.g. 8FQ-3K2-90A" />
+						</div>
+						<button class="btn" type="submit">Pair devices</button>
+						<div id="pairMsg" class="notice"></div>
+					</form>
+				</div>
+				<div class="card">
+					<h2>Scan Child QR</h2>
+					<video id="qrVideo" autoplay playsinline style="width:100%; border-radius: 12px; background:#000"></video>
+					<canvas id="qrCanvas" width="320" height="240" style="display:none"></canvas>
+					<div style="display:flex; gap:8px; margin-top:10px;">
+						<button id="startScan" class="btn secondary">Start Scan</button>
+						<button id="stopScan" class="btn secondary">Stop Scan</button>
+					</div>
+					<div id="scanMsg" class="notice"></div>
+				</div>
+			</div>
+			<div class="card" style="margin-top:24px;">
+				<div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+					<h2>Connected Child</h2>
+					<div>
+						<span id="childStatusBadge" class="badge muted">Idle</span>
+						<button id="disconnectBtn" class="btn danger">Disconnect</button>
+					</div>
+				</div>
+				<p class="muted" id="connectedChildLabel">No child connected.</p>
+			</div>
+			<div class="grid" style="margin-top:24px;">
+				<div class="card">
+					<h2>Activity Log</h2>
+					<table class="activity-table">
+						<thead><tr><th>Time</th><th>Activity</th></tr></thead>
+						<tbody id="activityLog"></tbody>
+					</table>
+				</div>
+				<div class="card">
+					<h2>Usage Analytics</h2>
+					<table class="activity-table">
+						<thead><tr><th>App/Category</th><th>Time Spent</th></tr></thead>
+						<tbody id="usageTable"></tbody>
+					</table>
+					<div style="margin-top:10px;">
+						<a href="monitor.html" class="btn secondary">Open Live Monitor</a>
+						<a href="analytics.html" class="btn secondary">Open Analytics</a>
+					</div>
+					<div style="margin-top:12px; display:grid; gap:10px;">
+						<div>
+							<div style="display:flex; justify-content:space-between; font-size:12px; color:#6b7280;">
+								<span>YouTube</span><span>45m</span>
+							</div>
+							<div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+						</div>
+						<div>
+							<div style="display:flex; justify-content:space-between; font-size:12px; color:#6b7280;">
+								<span>Games</span><span>35m</span>
+							</div>
+							<div class="progress"><div class="progress-bar" style="width:55%"></div></div>
+						</div>
+						<div>
+							<div style="display:flex; justify-content:space-between; font-size:12px; color:#6b7280;">
+								<span>Chat</span><span>30m</span>
+							</div>
+							<div class="progress"><div class="progress-bar" style="width:45%"></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid" style="margin-top:24px;">
+				<div class="card">
+					<h2>Live Screen Preview</h2>
+					<canvas id="homeScreenCanvas" width="480" height="270" style="width:100%; max-width:640px; border-radius:12px; background:#000"></canvas>
+					<p class="muted">Simulated frame updates every few seconds.</p>
+				</div>
+				<div class="card">
+					<h2>Live Location</h2>
+					<div id="homeMap" style="height:320px; border-radius:12px; overflow:hidden;"></div>
+					<p class="muted">Live marker movement demonstration.</p>
+				</div>
+				<div class="card">
+					<h2>Usage Chart</h2>
+					<canvas id="homeUsageChart" width="640" height="360" style="width:100%; max-width:840px;"></canvas>
+				</div>
+			</div>
+		</section>
+		<section id="child-section" style="display:none;">
+			<h1>Child Dashboard</h1>
+			<p class="muted">Show this QR to your parent to connect. You are being watched by: <span id="watchingParent">Parent</span></p>
+			<div class="grid">
+				<div class="card">
+					<h2>Your Pairing QR</h2>
+					<div id="childQr" style="background:#fff; border-radius:8px; padding:10px; display:inline-block"></div>
+					<p class="muted"><span id="childCodeText"></span></p>
+				</div>
+				<div class="card">
+					<h2>Your Recent Activities</h2>
+					<ul id="childActivityList" class="list"></ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer container">Stay safe and secure.</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/home.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+	<script src="js/home_extras.js"></script>
+</body>
+</html>
+

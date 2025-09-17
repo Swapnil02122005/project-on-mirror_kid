@@ -1,0 +1,1 @@
+// Home page logic is handled in app.js for role-based display and activity logs.

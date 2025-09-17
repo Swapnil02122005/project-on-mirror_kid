@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-label="Mirrorkid logo">
+	<defs>
+		<linearGradient id="mk-grad" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#6366f1"/>
+			<stop offset="100%" stop-color="#22d3ee"/>
+		</linearGradient>
+		<linearGradient id="mk-grad2" x1="1" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#22d3ee"/>
+			<stop offset="100%" stop-color="#6366f1"/>
+		</linearGradient>
+	</defs>
+	<rect x="2" y="2" width="60" height="60" rx="16" fill="#ffffff"/>
+	<g filter="url(#shadow)">
+		<circle cx="24" cy="28" r="12" fill="url(#mk-grad)"/>
+		<circle cx="40" cy="36" r="12" fill="url(#mk-grad2)"/>
+	</g>
+	<circle cx="24" cy="28" r="3" fill="#ffffff"/>
+	<circle cx="40" cy="36" r="3" fill="#ffffff"/>
+	<path d="M18 46q6-6 12 0" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/>
+	<path d="M34 18q6 6 12 0" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+	<g opacity="0.9">
+		<circle cx="12" cy="14" r="2" fill="#a5b4fc"/>
+		<circle cx="52" cy="50" r="2" fill="#67e8f9"/>
+	</g>
+</svg>

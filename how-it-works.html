@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mirrorkid | How it works</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/how.css" />
+</head>
+<body class="how-bg" data-protected="true">
+	<header>
+		<div class="container nav">
+			<div class="brand"><img src="assets/logo.svg" alt="Mirrorkid"/><span class="title">Mirrorkid</span></div>
+			<nav class="nav-links">
+				<a href="index.html">Login</a>
+				<a href="home.html">Home</a>
+				<a href="monitor.html">Monitor</a>
+				<a href="analytics.html">Analytics</a>
+				<a href="how-it-works.html" class="active">How it works</a>
+				<a href="profile.html">Profile</a>
+			</nav>
+		</div>
+	</header>
+	<main class="container how-main">
+		<h1>How Mirrorkid Works</h1>
+		<p class="muted">This guide explains how parents and children use Mirrorkid, with visual examples.</p>
+
+		<div class="how-steps">
+			<div class="card how-step">
+				<svg class="illu" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" rx="12" fill="#eef2ff"/><text x="20" y="65" fill="#3730a3" font-size="16" font-weight="700">1. Register & Choose Role</text></svg>
+				<h2>1. Register & Choose Role</h2>
+				<p>Sign up as a <strong>Parent</strong> or <strong>Child</strong>. Parents monitor; children can see who is watching them.</p>
+				<div class="callout">Tip: Use your regular email address. You can change your role later.</div>
+			</div>
+			<div class="card how-step">
+				<svg class="illu" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" rx="12" fill="#ecfeff"/><text x="20" y="65" fill="#155e75" font-size="16" font-weight="700">2. Pair Devices</text></svg>
+				<h2>2. Pair Devices</h2>
+				<p>On the <strong>Child</strong> phone, open Home to see a <strong>code + QR</strong>. On the <strong>Parent</strong> dashboard, enter the code or scan the QR to connect.</p>
+				<div class="callout">Secure: Pairing is short-lived and device-bound. You can disconnect anytime from the parent device.</div>
+			</div>
+			<div class="card how-step">
+				<svg class="illu" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="120" rx="12" fill="#f0fdf4"/><text x="20" y="65" fill="#166534" font-size="16" font-weight="700">3. Monitor</text></svg>
+				<h2>3. Monitor Activities</h2>
+				<p>Parents see a <strong>timeline of activities</strong> and a <strong>usage summary</strong> (time spent per app/category). Children see exactly <strong>who is watching</strong>.</p>
+			</div>
+		</div>
+
+		<div class="card how-example">
+			<h2>Example walk-through</h2>
+			<ol class="list">
+				<li>Parent registers and logs in as a parent.</li>
+				<li>Child registers and logs in as a child; a code like <strong>8FQ-3K2-90A</strong> and a QR appear.</li>
+				<li>Parent opens Home, enters the code or scans the child’s QR.</li>
+				<li>Parent sees Activity Log + Usage Analytics; child sees the parent’s name in their dashboard.</li>
+			</ol>
+			<div class="callout">Privacy note: Data is encrypted in transit and visible only to authorized accounts. You control permissions and can disconnect anytime.</div>
+		</div>
+
+		<div class="faq">
+			<h2>FAQs</h2>
+			<div class="faq-item">
+				<div class="faq-q">Do I need to install anything on the child phone?</div>
+				<div class="faq-a">No additional installation is required for this demo. In production, a companion app would collect activity data with consent.</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-q">How do I disconnect?</div>
+				<div class="faq-a">Go to the Parent dashboard and click <strong>Disconnect</strong>. The child cannot disconnect.</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-q">What activity types are visible?</div>
+				<div class="faq-a">Screen time aggregates and high-level app/category usage. Exact data depends on permissions and platform policies.</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer container">Questions? Contact support at help@mirrorkid.app</footer>
+	<script src="js/app.js"></script>
+	<script>
+		// Toggle FAQ answers
+		document.querySelectorAll('.faq-item .faq-q').forEach(q => {
+			q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+		});
+	</script>
+</body>
+</html>
+

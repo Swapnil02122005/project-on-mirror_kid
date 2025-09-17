@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Profile | Mirrorkid</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/profile.css" />
+</head>
+<body class="profile-bg" data-protected="true">
+	<header>
+		<div class="container nav">
+			<div class="brand"><img src="assets/logo.svg" alt="Mirrorkid"/><span class="title">Mirrorkid</span></div>
+			<nav class="nav-links">
+				<a href="index.html">Login</a>
+				<a href="home.html">Home</a>
+				<a href="monitor.html">Monitor</a>
+				<a href="analytics.html">Analytics</a>
+				<a href="how-it-works.html">How it works</a>
+				<a href="profile.html" class="active">Profile</a>
+			</nav>
+		</div>
+	</header>
+	<main class="container profile-main">
+		<h1>Your Profile</h1>
+		<div class="grid" style="gap:18px;">
+			<div class="card profile-card">
+				<h2>Account</h2>
+				<p><strong>Email:</strong> <span id="profileName">User</span></p>
+				<p><strong>Role:</strong> <span id="profileRole">Parent</span></p>
+				<div style="margin-top:18px;">
+					<button id="logoutBtn" class="btn danger">Logout</button>
+				</div>
+			</div>
+			<div class="card">
+				<h2>Child Details</h2>
+				<p><strong>Connected child:</strong> <span id="profileChild">None</span></p>
+				<p><strong>Pairing code:</strong> <span id="profilePairCode">-</span></p>
+			</div>
+			<div class="card">
+				<h2>Usage Summary</h2>
+				<table class="activity-table">
+					<thead><tr><th>Category</th><th>Time Spent</th></tr></thead>
+					<tbody id="profileUsage"></tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+	<footer class="footer container">Stay safe and secure.</footer>
+	<script src="js/app.js"></script>
+	<script src="js/profile.js"></script>
+</body>
+</html>
+
